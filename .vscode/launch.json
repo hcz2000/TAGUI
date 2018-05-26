@@ -1,0 +1,137 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}"
+        },
+        {
+            "name": "Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "${workspaceFolder}",
+            "port": 3000,
+            "secret": "my_secret",
+            "host": "localhost"
+        },
+        {
+            "name": "Python: Terminal (integrated)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Terminal (external)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Python: Django",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "--noreload",
+                "--nothreading"
+            ],
+            "debugOptions": [
+                "RedirectOutput",
+                "Django"
+            ]
+        },
+        {
+            "name": "Python: Flask (0.11.x or later)",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "${workspaceFolder}/app.py"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ]
+        },
+        {
+            "name": "Python: Module",
+            "type": "python",
+            "request": "launch",
+            "module": "module.name"
+        },
+        {
+            "name": "Python: Pyramid",
+            "type": "python",
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/development.ini"
+            ],
+            "debugOptions": [
+                "RedirectOutput",
+                "Pyramid"
+            ]
+        },
+        {
+            "name": "Python: Watson",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/console.py",
+            "args": [
+                "dev",
+                "runserver",
+                "--noreload=True"
+            ]
+        },
+        {
+            "name": "Python: All debug Options",
+            "type": "python",
+            "request": "launch",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${file}",
+            "module": "module.name",
+            "env": {
+                "VAR1": "1",
+                "VAR2": "2"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": [
+                "arg1",
+                "arg2"
+            ],
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        },
+        {    
+            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示 
+            "preLaunchTask": "build", // 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc    
+            "type": "cppdbg",       // 配置类型，这里只能为cppdbg    
+            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）    
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",// 将要进行调试的程序的路径    
+            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可    
+            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false    
+            "cwd": "${workspaceRoot}", // 调试程序时的工作目录，一般为${workspaceRoot}即代码所在目录    
+            "environment": [],    
+            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台    
+            "MIMode": "gdb",    
+            "miDebuggerPath": "d:/Program Files/MinGW/bin/gdb.exe", // miDebugger的路径，注意这里要与MinGw的路径对应    
+            "setupCommands": [    
+                {     
+                    "description": "Enable pretty-printing for gdb",    
+                    "text": "-enable-pretty-printing",    
+                    "ignoreFailures": true    
+                }    
+            ]    
+        } 
+    ]
+}
